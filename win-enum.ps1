@@ -79,8 +79,10 @@ function main_logic {
     if ($isAdmin) {
         Write-Host "[+] YOU HAVE ADMIN RIGHTS"
     }
-    user_info
-    check_ep
+    if ($verbose) {
+        user_info
+        check_ep
+    }
     print_procs $isAdmin
     print_servs
 }
