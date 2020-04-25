@@ -8,14 +8,20 @@ My attempt at an enumeration script for Windows
 - limit: Limit the number of processes/services to display. Default is 20
 - sleep\_time: The amount of time to sleep between each run of the script. Default is 20 seconds
 
-# Example Usage
+# Example Usage (When the script is saved locally)
+- First, dot source the script
+     ```. .\win-enum.ps1```
 - Run the script, no looping, default settings<br>
-     ```.\win-enum.ps1```
+     ```Invoke-WinEnum```
 - Run the script, loop infinitely, default settings<br>
-     ```.\win-enum.ps1 -loop```
+     ```Invoke-WinEnum -loop```
 - Run the script, loop, verbose output<br>
-     ```.\win-enum.ps1 -loop -verbose```
+     ```Invoke-WinEnum -loop -verbose```
 - Run the script, loop, limit the output of processes/services to 10<br>
-     ```.\win-enum.ps1 -loop -limit 10```
+     ```Invoke-WinEnum -loop -limit 10```
 - Run the script, loop, set sleep time to 5 seconds<br>
-     ```.\win-enum.ps1 -loop -sleep_time 5```
+     ```Invoke-WinEnum -loop -sleep_time 5```
+
+# Example Usage (When the script isn't saved locally)
+- Run the script, no looping, default settings<br>
+```IEX (New-Object Net.WebClient).DownloadString("https://raw.githubusercontent.com/wmrabb11/win-enum/master/win-enum.ps1") | Invoke-WinEnum```
