@@ -1,4 +1,6 @@
-﻿param (
+﻿function Invoke-WinEnum {
+
+param (
     [switch]$verbose = $false,
     [switch]$help = $false,
     [switch]$loop = $false,
@@ -104,3 +106,4 @@ function main {
 }
 
 main
+}
